@@ -97,6 +97,10 @@ Claude Code is a grate tool. But using the UI CLI. If you want to have a better 
 
 ![VC Cline](images/cline-vc.png)
 
+After that we can start send any prompt to tool
+
+![VC Cline](images/cline-prompt.png)
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
