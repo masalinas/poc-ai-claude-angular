@@ -1,0 +1,22 @@
+/* PrimeFlex */
+@use 'primeflex/primeflex.scss' as *;
+
+/* PrimeIcons */
+@import 'primeicons/primeicons.css';
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--p-surface-50);
+}

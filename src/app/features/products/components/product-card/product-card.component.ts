@@ -1,0 +1,46 @@
+import { Component, input, output } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Card } from 'primeng/card';
+import { Button } from 'primeng/button';
+import { Tag } from 'primeng/tag';
+import type { Product } from '../../models/product.model';
+
+@Component({
+  selector: 'app-product-card',
+  standalone: true,
+  imports: [CurrencyPipe, Card, Button, Tag],
+  template: `
+    <p-card>
+      <ng-template #title>
+        <div class="flex align-items-center justify-content-between">
+          <span class="text-lg font-bold">{{ product().name }}</span>
+          <p-tag
+            [value]="product().active ? 'Activo' : 'Inactivo'"
+            [severity]="product().active ? 'success' : 'secondary'"
+          />
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <p class="m-0 mb-3 text-gray-500">{{ product().description }}</p>
+        <p class="text-xl font-bold m-0" style="color: var(--p-primary-800)">
+          {{ product().price | currency:'EUR':'symbol':'1.2-2' }}
+        </p>
+      </ng-template>
+      <ng-template #footer>
+        <div class="flex justify-content-end">
+          <p-button
+            label="Ver detalle"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            severity="secondary"
+            (onClick)="viewDetails.emit(product().id)"
+          />
+        </div>
+      </ng-template>
+    </p-card>
+  `,
+})
+export class ProductCardComponent {
+  readonly product = input.required<Product>();
+  readonly viewDetails = output<string>();
+}

@@ -1,0 +1,13 @@
+import { Pipe, type PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'truncate',
+  standalone: true,
+})
+export class TruncatePipe implements PipeTransform {
+  transform(value: string, maxLength = 100, suffix = '...'): string {
+    if (!value) return '';
+    if (value.length <= maxLength) return value;
+    return value.substring(0, maxLength).trimEnd() + suffix;
+  }
+}
