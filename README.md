@@ -78,15 +78,24 @@ Pull the model gemma4:12b
 ollama pull gemma4:12b
 ```
 
-## InStart Claude Code CLI
+## Install Claude Code CLI
 
-To use your local LLM models start claude code from ollama:
+To use your local LLM models start claude code from ollama using launch command. You must first pull the model to be used with Claude Code:
 
 ```bash
 ollama launch claude --model gemma4:12b
 ```
 
 ![Langgraph Agent Model](images/claude-code-cli.png)
+
+## Install Cline in VC
+Claude Code is a grate tool. But using the UI CLI. If you want to have a better experience creating your code you can install cline in your VC environment.
+
+- Install cline like other extension in VC.
+- First you must register an account in cline to configure the extension. the extension.
+- Configure the model to be used by cline from API Configuration. You can use ollama or external models (someones are free) as API Provider.
+
+![VC Cline](images/cline-vc.png)
 
 ## Additional Resources
 
