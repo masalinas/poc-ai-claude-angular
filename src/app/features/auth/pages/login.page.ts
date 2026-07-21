@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
 import { LoginFormComponent } from '../components/login-form/login-form.component';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginPage {
 
   async onLogin(credentials: { email: string; password: string }): Promise<void> {
     try {
-      await this.authService.login(credentials.email, credentials.password);
+      await this.authService.login(credentials);
       await this.router.navigate(['/dashboard']);
     } catch (error) {
       console.error('Login failed:', error);
