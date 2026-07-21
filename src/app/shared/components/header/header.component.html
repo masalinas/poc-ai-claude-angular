@@ -1,0 +1,27 @@
+<p-toolbar>
+  <ng-template #start>
+    <div class="flex align-items-center gap-4">
+      <a routerLink="/" class="flex align-items-center gap-2 no-underline font-bold text-xl" style="color: var(--p-primary-50)">
+        <i class="pi pi-angular" style="font-size: 1.5rem"></i>
+        <span>POC Angular</span>
+      </a>
+    </div>
+  </ng-template>
+  <ng-template #end>
+    <div class="profile-container">
+      <p-button
+        [text]="true"
+        [rounded]="true"
+        styleClass="profile-btn"
+        [label]="userInitial"
+        (click)="toggleProfileMenu($event)"
+      />
+      <div class="profile-dropdown" [class.hidden]="!showProfileMenu">
+        <button class="logout-btn" (click)="handleLogout($event)">
+          <i class="pi pi-sign-out"></i>
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</p-toolbar>

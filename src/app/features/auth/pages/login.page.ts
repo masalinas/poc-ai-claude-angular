@@ -7,9 +7,8 @@ import { LoginFormComponent } from '../components/login-form/login-form.componen
   selector: 'app-login',
   standalone: true,
   imports: [LoginFormComponent],
-  template: `
-    <app-login-form (login)="onLogin($event)" />
-  `,
+  templateUrl: './login.page.html',
+  styleUrl: './login.page.scss'
 })
 export class LoginPage {
   private readonly authService = inject(AuthService);

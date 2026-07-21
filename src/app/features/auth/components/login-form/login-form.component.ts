@@ -9,55 +9,8 @@ import { Button } from 'primeng/button';
   selector: 'app-login-form',
   standalone: true,
   imports: [FormsModule, Card, InputText, Password, Button],
-  template: `
-    <p-card>
-      <ng-template #title>
-        <div class="text-center">
-          <i class="pi pi-angular text-4xl mb-2" style="color: var(--p-primary-800)"></i>
-          <h2 class="text-xl font-bold m-0">Iniciar sesión</h2>
-        </div>
-      </ng-template>
-      <ng-template #content>
-        <form (ngSubmit)="onSubmit()" class="flex flex-column gap-4">
-          <div class="flex flex-column gap-1">
-            <label for="email" class="text-sm text-gray-600">Email</label>
-            <input
-              id="email"
-              type="email"
-              pInputText
-              [(ngModel)]="email"
-              name="email"
-              required
-              autocomplete="email"
-              placeholder="tu@email.com"
-            />
-          </div>
-
-          <div class="flex flex-column gap-1">
-            <label for="password" class="text-sm text-gray-600">Contraseña</label>
-            <p-password
-              [(ngModel)]="password"
-              name="password"
-              [feedback]="false"
-              [toggleMask]="true"
-              inputId="password"
-              placeholder="••••••••"
-              autocomplete="current-password"
-              styleClass="w-full"
-            />
-          </div>
-
-          <p-button
-            type="submit"
-            label="Entrar"
-            icon="pi pi-sign-in"
-            [disabled]="!email || !password"
-            styleClass="w-full"
-          />
-        </form>
-      </ng-template>
-    </p-card>
-  `,
+  templateUrl: './login-form.component.html',
+  styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {
   protected email = '';
